@@ -138,9 +138,6 @@ public class MainFrame1 extends javax.swing.JFrame {
         nextbtnsummary = new javax.swing.JButton();
         backbtnregister = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jLabel16 = new javax.swing.JLabel();
         checkin = new com.toedter.calendar.JDateChooser();
         checkout = new com.toedter.calendar.JDateChooser();
         royalroomnum = new javax.swing.JComboBox<>();
@@ -215,34 +212,34 @@ public class MainFrame1 extends javax.swing.JFrame {
                 .addComponent(lblAdmin)
                 .addGap(18, 18, 18)
                 .addComponent(lblAboutUs)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblHome)
-                    .addComponent(lblAboutUs)
                     .addComponent(jLabel1)
+                    .addComponent(lblHome)
+                    .addComponent(lblBooking)
                     .addComponent(lblAdmin)
-                    .addComponent(lblBooking))
-                .addGap(20, 20, 20))
+                    .addComponent(lblAboutUs))
+                .addContainerGap())
         );
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 
-        hourlabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        hourlabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         hourlabel.setForeground(new java.awt.Color(255, 255, 255));
         hourlabel.setText("HOUR");
         jPanel2.add(hourlabel);
 
-        minutelabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        minutelabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         minutelabel.setForeground(new java.awt.Color(255, 255, 255));
         minutelabel.setText("MINS");
         jPanel2.add(minutelabel);
 
-        secondslabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        secondslabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         secondslabel.setForeground(new java.awt.Color(255, 255, 255));
         secondslabel.setText("SECS");
         jPanel2.add(secondslabel);
@@ -252,17 +249,17 @@ public class MainFrame1 extends javax.swing.JFrame {
         jLabel19.setText("===");
         jPanel2.add(jLabel19);
 
-        datelabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        datelabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         datelabel2.setForeground(new java.awt.Color(255, 255, 255));
         datelabel2.setText("DATE");
         jPanel2.add(datelabel2);
 
-        monthlabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        monthlabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         monthlabel.setForeground(new java.awt.Color(255, 255, 255));
         monthlabel.setText("MNTH");
         jPanel2.add(monthlabel);
 
-        yearlabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        yearlabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         yearlabel.setForeground(new java.awt.Color(255, 255, 255));
         yearlabel.setText("YEAR");
         jPanel2.add(yearlabel);
@@ -276,6 +273,7 @@ public class MainFrame1 extends javax.swing.JFrame {
         jTextArea1.setText("5-STAR HOTEL IN MAKASAR\n\nNightStay Hotel designed to bring you an upscale modern-day hotel \nexperience from your arrival to your next time. Perfectly located \nin the heart of Makasar, near the highway and 30 minutes from Airport, \nour 5-star hotel is within easy reach of Makasar's prestigious corporations, \nlandmark attractions, and shopping centers, restaurants, and nightlife.");
         jTextArea1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jButton6.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jButton6.setText("Next");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -289,9 +287,9 @@ public class MainFrame1 extends javax.swing.JFrame {
             homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homeLayout.createSequentialGroup()
                 .addContainerGap(77, Short.MAX_VALUE)
-                .addGroup(homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton6)
-                    .addComponent(jTextArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextArea1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(66, 66, 66))
         );
         homeLayout.setVerticalGroup(
@@ -312,8 +310,16 @@ public class MainFrame1 extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Trajan Pro", 1, 24)); // NOI18N
         jLabel2.setText("Register");
 
+        firstnameinput.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+
+        lastnameinput.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+
+        emailinput.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+
+        genderComboBox.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         genderComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pria", "Wanita" }));
 
+        nextbtnroomoption.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         nextbtnroomoption.setText("Next");
         nextbtnroomoption.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -321,10 +327,13 @@ public class MainFrame1 extends javax.swing.JFrame {
             }
         });
 
+        jLabel15.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel15.setText("First Name");
 
+        jLabel17.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel17.setText("Last Name");
 
+        jLabel18.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel18.setText("Email");
 
         javax.swing.GroupLayout registerLayout = new javax.swing.GroupLayout(register);
@@ -332,7 +341,7 @@ public class MainFrame1 extends javax.swing.JFrame {
         registerLayout.setHorizontalGroup(
             registerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(registerLayout.createSequentialGroup()
-                .addContainerGap(291, Short.MAX_VALUE)
+                .addContainerGap(288, Short.MAX_VALUE)
                 .addGroup(registerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel15)
                     .addComponent(jLabel17)
@@ -377,6 +386,7 @@ public class MainFrame1 extends javax.swing.JFrame {
 
         roomOption.setBackground(new java.awt.Color(102, 204, 255));
 
+        jComboBox1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Select>", "101", "102", "103" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -387,6 +397,7 @@ public class MainFrame1 extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Trajan Pro", 1, 24)); // NOI18N
         jLabel3.setText("Room Type");
 
+        juniorroomtypecombobox.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         juniorroomtypecombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Junior", "President", "Royal" }));
         juniorroomtypecombobox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -394,8 +405,10 @@ public class MainFrame1 extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel5.setText("Check In");
 
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel4.setText("Check Out");
 
         nextbtnsummary.setText("Next");
@@ -412,18 +425,14 @@ public class MainFrame1 extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setText("Junior");
-
-        jButton8.setText("Royal");
-
-        jButton9.setText("President");
-
-        jLabel16.setText("Information");
+        jButton7.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jButton7.setText("Information Room");
 
         checkin.setDateFormatString("yyyy-MM-dd");
 
         checkout.setDateFormatString("yyyy-MM-dd");
 
+        royalroomnum.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         royalroomnum.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Select>", "301", "302", "303" }));
         royalroomnum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -431,6 +440,7 @@ public class MainFrame1 extends javax.swing.JFrame {
             }
         });
 
+        presidentroomnum.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         presidentroomnum.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Select>", "201", "202", "203" }));
         presidentroomnum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -444,86 +454,70 @@ public class MainFrame1 extends javax.swing.JFrame {
             roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(roomOptionLayout.createSequentialGroup()
                 .addGap(34, 34, 34)
-                .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, roomOptionLayout.createSequentialGroup()
                         .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel16)
-                            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
-                            .addComponent(juniorroomtypecombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(juniorroomtypecombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(25, 25, 25))
                     .addGroup(roomOptionLayout.createSequentialGroup()
-                        .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton9))
-                        .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(roomOptionLayout.createSequentialGroup()
-                                .addGap(144, 144, 144)
-                                .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(backbtnregister)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(roomOptionLayout.createSequentialGroup()
-                                .addGap(125, 125, 125)
-                                .addComponent(checkin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(33, 33, 33)))
-                .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(presidentroomnum, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(roomOptionLayout.createSequentialGroup()
-                            .addGap(34, 34, 34)
+                        .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(backbtnregister, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel4)
-                                .addComponent(nextbtnsummary)))
-                        .addGroup(roomOptionLayout.createSequentialGroup()
-                            .addGap(17, 17, 17)
-                            .addComponent(checkout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(27, 27, 27)
-                .addComponent(royalroomnum, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(56, Short.MAX_VALUE))
+                                .addGroup(roomOptionLayout.createSequentialGroup()
+                                    .addGap(221, 221, 221)
+                                    .addComponent(jLabel5))
+                                .addGroup(roomOptionLayout.createSequentialGroup()
+                                    .addGap(202, 202, 202)
+                                    .addComponent(checkin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(87, 87, 87)))
+                .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(roomOptionLayout.createSequentialGroup()
+                        .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(nextbtnsummary, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(checkout, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(presidentroomnum, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(38, 38, 38)
+                        .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton7)
+                            .addComponent(royalroomnum, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(roomOptionLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel4)))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         roomOptionLayout.setVerticalGroup(
             roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(roomOptionLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
+                .addComponent(jLabel3)
+                .addGap(39, 39, 39)
                 .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel16))
+                    .addComponent(juniorroomtypecombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(46, 46, 46)
+                .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(royalroomnum, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(presidentroomnum, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52)
+                .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(roomOptionLayout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(jButton7)
-                        .addGap(57, 57, 57)
-                        .addComponent(jButton8)
-                        .addGap(60, 60, 60)
-                        .addComponent(jButton9)
-                        .addGap(236, 236, 236))
+                        .addComponent(checkin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                        .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nextbtnsummary)
+                            .addComponent(backbtnregister))
+                        .addGap(86, 86, 86))
                     .addGroup(roomOptionLayout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(juniorroomtypecombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(46, 46, 46)
-                        .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(royalroomnum, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(presidentroomnum, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(52, 52, 52)
-                        .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(roomOptionLayout.createSequentialGroup()
-                                .addComponent(checkin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(roomOptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(nextbtnsummary)
-                                    .addComponent(backbtnregister))
-                                .addGap(86, 86, 86))
-                            .addGroup(roomOptionLayout.createSequentialGroup()
-                                .addComponent(checkout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                        .addComponent(checkout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         jLayeredPane1.add(roomOption);
@@ -558,8 +552,10 @@ public class MainFrame1 extends javax.swing.JFrame {
         finalprice.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         finalprice.setText(": x");
 
+        jCheckBox1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jCheckBox1.setText("Payed");
 
+        savebtn.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         savebtn.setText("Save");
         savebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -567,8 +563,10 @@ public class MainFrame1 extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jButton4.setText("Send to Mail");
 
+        backbtnroomoption.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         backbtnroomoption.setText("Back");
         backbtnroomoption.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -599,45 +597,17 @@ public class MainFrame1 extends javax.swing.JFrame {
         summaryLayout.setHorizontalGroup(
             summaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, summaryLayout.createSequentialGroup()
+                .addGap(417, 417, 417)
                 .addGroup(summaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(summaryLayout.createSequentialGroup()
-                        .addGap(448, 448, 448)
-                        .addComponent(jLabel6)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(backbtnroomoption)
+                        .addGap(51, 51, 51)
+                        .addComponent(jButton4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                        .addComponent(savebtn))
                     .addGroup(summaryLayout.createSequentialGroup()
-                        .addGap(417, 417, 417)
+                        .addGap(1, 1, 1)
                         .addGroup(summaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(summaryLayout.createSequentialGroup()
-                                .addGroup(summaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(backbtnroomoption)
-                                    .addComponent(jLabel8))
-                                .addGap(51, 51, 51)
-                                .addGroup(summaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(summaryLayout.createSequentialGroup()
-                                        .addComponent(jButton4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(savebtn))
-                                    .addGroup(summaryLayout.createSequentialGroup()
-                                        .addComponent(finalduration)
-                                        .addGap(0, 175, Short.MAX_VALUE))))
-                            .addGroup(summaryLayout.createSequentialGroup()
-                                .addGroup(summaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel13)
-                                    .addComponent(jLabel20)
-                                    .addComponent(jLabel10))
-                                .addGap(37, 37, 37)
-                                .addGroup(summaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(summaryLayout.createSequentialGroup()
-                                        .addComponent(finalprice)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jCheckBox1))
-                                    .addGroup(summaryLayout.createSequentialGroup()
-                                        .addGroup(summaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(finalroomprice)
-                                            .addComponent(finalcheckout)
-                                            .addComponent(finalcheckin))
-                                        .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(summaryLayout.createSequentialGroup()
                                 .addGroup(summaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(summaryLayout.createSequentialGroup()
@@ -646,51 +616,71 @@ public class MainFrame1 extends javax.swing.JFrame {
                                         .addComponent(finalroomnumber))
                                     .addGroup(summaryLayout.createSequentialGroup()
                                         .addComponent(jLabel7)
-                                        .addGap(37, 37, 37)
-                                        .addComponent(finalroom)))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                        .addGap(36, 36, 36)
+                                        .addGroup(summaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(finalduration)
+                                            .addComponent(finalroom)
+                                            .addComponent(finalcheckin)
+                                            .addComponent(finalcheckout)
+                                            .addComponent(finalroomprice)
+                                            .addComponent(finalprice))))
+                                .addGap(0, 134, Short.MAX_VALUE))
+                            .addGroup(summaryLayout.createSequentialGroup()
+                                .addGroup(summaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel20)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel13))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jCheckBox1)))))
                 .addGap(28, 28, 28))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, summaryLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(108, 108, 108))
         );
         summaryLayout.setVerticalGroup(
             summaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(summaryLayout.createSequentialGroup()
-                .addGap(61, 61, 61)
+                .addGap(47, 47, 47)
                 .addComponent(jLabel6)
-                .addGap(31, 31, 31)
+                .addGap(45, 45, 45)
                 .addGroup(summaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(finalroomnumber))
                 .addGap(32, 32, 32)
                 .addGroup(summaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(finalroom))
+                    .addComponent(finalroom)
+                    .addComponent(jLabel7))
                 .addGap(30, 30, 30)
                 .addGroup(summaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(finalduration)
                     .addComponent(jLabel8))
                 .addGap(26, 26, 26)
                 .addGroup(summaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(finalcheckin))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(finalcheckin)
+                    .addComponent(jLabel10))
+                .addGap(25, 25, 25)
                 .addGroup(summaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
                     .addComponent(finalcheckout))
-                .addGap(25, 25, 25)
+                .addGap(28, 28, 28)
                 .addGroup(summaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(finalroomprice))
-                .addGap(28, 28, 28)
+                .addGap(32, 32, 32)
                 .addGroup(summaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(finalprice)
-                    .addComponent(jLabel13)
-                    .addComponent(jCheckBox1))
-                .addGap(34, 34, 34)
+                    .addComponent(jLabel13))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jCheckBox1)
+                .addGap(35, 35, 35)
                 .addGroup(summaryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(savebtn)
                     .addComponent(backbtnroomoption)
                     .addComponent(jButton4))
-                .addGap(0, 82, Short.MAX_VALUE))
+                .addGap(0, 39, Short.MAX_VALUE))
         );
 
         jLayeredPane1.add(summary);
@@ -702,9 +692,10 @@ public class MainFrame1 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1080,8 +1071,6 @@ public class MainFrame1 extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
@@ -1089,7 +1078,6 @@ public class MainFrame1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
