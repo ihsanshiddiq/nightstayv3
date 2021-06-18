@@ -20,17 +20,17 @@ public class Booking {
     private String first_name = null;
     private String last_name = null;
     private String email = null;
-    private boolean gender = true;
+    private String gender = null;
     private String nomer_kamar = null;
-    private Date check_in;
-    private Date check_out;
+    private String check_in = null;
+    private String check_out = null;
 
     Connection con = null;
     String url = "jdbc:mysql://localhost:3306/nightstay_3";
     String user = "root";
     String pass = "";
 
-    public void Booking(String NK, String FN, String LN, String Email, boolean Gender, Date CI, Date CO) {
+    public void Booking(String NK, String FN, String LN, String Email, String Gender, String CI, String CO) {
         this.nomer_kamar = NK;
         this.first_name = FN;
         this.last_name = LN;
@@ -54,9 +54,9 @@ public class Booking {
             preparedStmt.setString(2, first_name);
             preparedStmt.setString(3, last_name);
             preparedStmt.setString(4, email);
-            preparedStmt.setBoolean(5, gender);
-            //preparedStmt.setDate(6, check_in);
-            //preparedStmt.setDate(7, check_out);
+            preparedStmt.setString(5, gender);
+            preparedStmt.setString(6, check_in);
+            preparedStmt.setString(7, check_out);
 
             // executor
             preparedStmt.execute();
@@ -82,15 +82,15 @@ public class Booking {
         this.email = email;
     }
 
-    public void setGender(boolean gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
-    public void setCheck_in(Date check_in) {
+    public void setCheck_in(String check_in) {
         this.check_in = check_in;
     }
 
-    public void setCheck_out(Date check_out) {
+    public void setCheck_out(String check_out) {
         this.check_out = check_out;
     }
 
@@ -108,15 +108,15 @@ public class Booking {
         return email;
     }
 
-    public Date getCheck_in() {
+    public String getCheck_in() {
         return check_in;
     }
 
-    public Date getCheck_out() {
+    public String getCheck_out() {
         return check_out;
     }
 
-    public Boolean getGender() {
+    public String getGender() {
         return gender;
     }
 
