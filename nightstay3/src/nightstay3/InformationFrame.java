@@ -16,6 +16,9 @@ public class InformationFrame extends javax.swing.JFrame {
      */
     public InformationFrame() {
         initComponents();
+        juniorSuite.setVisible(true); 
+        presidentSuite.setVisible(false);
+        royalSuite.setVisible(false);
     }
 
     /**
@@ -27,28 +30,248 @@ public class InformationFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        juniorSuite = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        nexttopres = new javax.swing.JButton();
+        presidentSuite = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        nexttoroyal = new javax.swing.JButton();
+        backtojunior = new javax.swing.JButton();
+        royalSuite = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
+        backtopres = new javax.swing.JButton();
+        backtopres1 = new javax.swing.JButton();
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        juniorSuite.setBackground(new java.awt.Color(0, 153, 255));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel1.setText("Junior Suite");
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(153, 204, 255));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jTextArea1.setRows(5);
+        jTextArea1.setText("\n\n\n\n\nJunior Suite merupakan kamar yang memiliki fasilitas 2 Kasur, Televisi, Meja Kerja ukuran\n sedang lengkap dengan Kursinya, Kursi Santai, Lemari Pakaian dengan ukuran besar, dan \n                                        fasilitas kamar mandi yang mewah.\n\n\nHarga Kamar : $15.0");
+        jScrollPane1.setViewportView(jTextArea1);
+
+        nexttopres.setText("Next");
+        nexttopres.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nexttopresActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout juniorSuiteLayout = new javax.swing.GroupLayout(juniorSuite);
+        juniorSuite.setLayout(juniorSuiteLayout);
+        juniorSuiteLayout.setHorizontalGroup(
+            juniorSuiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(juniorSuiteLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(juniorSuiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(nexttopres, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(juniorSuiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel1)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        juniorSuiteLayout.setVerticalGroup(
+            juniorSuiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(juniorSuiteLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel1)
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(nexttopres)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 400));
+        jLayeredPane1.add(juniorSuite);
+        juniorSuite.setBounds(0, 0, 600, 400);
+
+        presidentSuite.setBackground(new java.awt.Color(255, 255, 102));
+
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel2.setText("President Suite");
+
+        jTextArea2.setEditable(false);
+        jTextArea2.setBackground(new java.awt.Color(255, 255, 153));
+        jTextArea2.setColumns(20);
+        jTextArea2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jTextArea2.setRows(5);
+        jTextArea2.setText("\n\n\n\n\nPresident Suite merupakan kamar yang memiliki fasilitas Kasur berukuran besar, TV, Kursi \n Santai berukuran panjang, Lemari Pakaian dengan ukuran besar, dan fasilitas kamar mandi \n                                                 yang mewah dan luas.\n\n\nHarga Kamar : 20.0$");
+        jScrollPane2.setViewportView(jTextArea2);
+
+        nexttoroyal.setText("Next");
+        nexttoroyal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nexttoroyalActionPerformed(evt);
+            }
+        });
+
+        backtojunior.setText("Back");
+        backtojunior.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backtojuniorActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout presidentSuiteLayout = new javax.swing.GroupLayout(presidentSuite);
+        presidentSuite.setLayout(presidentSuiteLayout);
+        presidentSuiteLayout.setHorizontalGroup(
+            presidentSuiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(presidentSuiteLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(presidentSuiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(presidentSuiteLayout.createSequentialGroup()
+                        .addComponent(backtojunior, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(nexttoroyal, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(presidentSuiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel2)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+        presidentSuiteLayout.setVerticalGroup(
+            presidentSuiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(presidentSuiteLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel2)
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(presidentSuiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nexttoroyal)
+                    .addComponent(backtojunior))
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+
+        jLayeredPane1.add(presidentSuite);
+        presidentSuite.setBounds(0, 0, 600, 400);
+
+        royalSuite.setBackground(new java.awt.Color(255, 0, 204));
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel3.setText("Royal Suite");
+
+        jTextArea3.setEditable(false);
+        jTextArea3.setBackground(new java.awt.Color(255, 0, 255));
+        jTextArea3.setColumns(20);
+        jTextArea3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jTextArea3.setRows(5);
+        jTextArea3.setText("  \n\n\n\n\n President Suite merupakan kamar yang memiliki fasilitas Kasur berukuran besar, Ruangan\n   Keluarga lengkap dengan kusri, meja, dan juga tv, Kursi Santai berukuran panjang, Dua \n    Lemari Pakaian dengan ukuran besar, dan fasilitas kamar mandi yang mewah dan luas.\n\n\nHarga Kamar : $25.0");
+        jScrollPane3.setViewportView(jTextArea3);
+
+        backtopres.setText("Back");
+        backtopres.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backtopresActionPerformed(evt);
+            }
+        });
+
+        backtopres1.setText("Exit");
+        backtopres1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backtopres1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout royalSuiteLayout = new javax.swing.GroupLayout(royalSuite);
+        royalSuite.setLayout(royalSuiteLayout);
+        royalSuiteLayout.setHorizontalGroup(
+            royalSuiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(royalSuiteLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(royalSuiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(royalSuiteLayout.createSequentialGroup()
+                        .addGroup(royalSuiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(royalSuiteLayout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(408, 408, 408)))
+                        .addContainerGap(37, Short.MAX_VALUE))
+                    .addGroup(royalSuiteLayout.createSequentialGroup()
+                        .addComponent(backtopres, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(backtopres1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35))))
+        );
+        royalSuiteLayout.setVerticalGroup(
+            royalSuiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(royalSuiteLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel3)
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(royalSuiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(backtopres)
+                    .addComponent(backtopres1))
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+
+        jLayeredPane1.add(royalSuite);
+        royalSuite.setBounds(0, 0, 600, 400);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void nexttopresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nexttopresActionPerformed
+        // TODO add your handling code here:
+        juniorSuite.setVisible(false); 
+        presidentSuite.setVisible(true);
+        royalSuite.setVisible(false);
+    }//GEN-LAST:event_nexttopresActionPerformed
+
+    private void nexttoroyalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nexttoroyalActionPerformed
+        // TODO add your handling code here:
+        juniorSuite.setVisible(false); 
+        presidentSuite.setVisible(false);
+        royalSuite.setVisible(true);
+    }//GEN-LAST:event_nexttoroyalActionPerformed
+
+    private void backtojuniorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backtojuniorActionPerformed
+        // TODO add your handling code here:
+        juniorSuite.setVisible(true); 
+        presidentSuite.setVisible(false);
+        royalSuite.setVisible(false);
+    }//GEN-LAST:event_backtojuniorActionPerformed
+
+    private void backtopresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backtopresActionPerformed
+        // TODO add your handling code here:
+        juniorSuite.setVisible(false); 
+        presidentSuite.setVisible(true);
+        royalSuite.setVisible(false);
+    }//GEN-LAST:event_backtopresActionPerformed
+
+    private void backtopres1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backtopres1ActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_backtopres1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -76,6 +299,9 @@ public class InformationFrame extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(InformationFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -86,6 +312,24 @@ public class InformationFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton backtojunior;
+    private javax.swing.JButton backtopres;
+    private javax.swing.JButton backtopres1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JPanel juniorSuite;
+    private javax.swing.JButton nexttopres;
+    private javax.swing.JButton nexttoroyal;
+    private javax.swing.JPanel presidentSuite;
+    private javax.swing.JPanel royalSuite;
     // End of variables declaration//GEN-END:variables
 }
