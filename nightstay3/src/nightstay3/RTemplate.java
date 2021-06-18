@@ -10,6 +10,10 @@ package nightstay3;
  * @author Turgut Reiss
  */
 abstract class RTemplate {
+    
+    //public double harga;
+    //public double total;
+    
     public abstract void order(int h);
     public abstract double getharga();
     public abstract double getTotal();    

@@ -10,7 +10,7 @@ package nightstay3;
  * @author Turgut Reiss
  */
 public class RRoyal extends RTemplate{
-     double harga = 30.0;
+    double harga = 30.0;
     double total = 0;
     private int hari;
     private String roomid;

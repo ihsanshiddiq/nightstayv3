@@ -5,18 +5,39 @@
  */
 package nightstay3;
 
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.*;
+import javax.swing.table.*;
+
 /**
  *
  * @author ASUS
  */
 public class MainFrame2 extends javax.swing.JFrame {
 
+    
     /**
      * Creates new form RoomListFrame
      */
-    public MainFrame2() {
+    public Connection con;
+    public ResultSet rs;
+    public PreparedStatement ps;
+
+    public MainFrame2() throws SQLException {
         initComponents();
         tabel.setVisible(false);
+        register.setVisible(false);
+
+        initComponents();
+        con = null;
+        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/nightstay_3", "root", "");
+        HistoryTableComponentAdded();
+    }
+
+    public void UpdateTable() {
+
     }
 
     /**
@@ -50,7 +71,7 @@ public class MainFrame2 extends javax.swing.JFrame {
         tabel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        HistoryTable = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
@@ -73,6 +94,11 @@ public class MainFrame2 extends javax.swing.JFrame {
         jLabel2.setText("Login");
 
         loginbtn.setText("Login");
+        loginbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginbtnActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel5.setText("Username");
@@ -180,7 +206,7 @@ public class MainFrame2 extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel4.setText("Hello Admin");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        HistoryTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -211,7 +237,12 @@ public class MainFrame2 extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        HistoryTable.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                HistoryTableComponentAdded(evt);
+            }
+        });
+        jScrollPane1.setViewportView(HistoryTable);
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -251,7 +282,7 @@ public class MainFrame2 extends javax.swing.JFrame {
                         .addGroup(tabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(tabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -298,6 +329,43 @@ public class MainFrame2 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void HistoryTableComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_HistoryTableComponentAdded
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_HistoryTableComponentAdded
+
+    private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbtnActionPerformed
+        
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_loginbtnActionPerformed
+
+    
+     private void HistoryTableComponentAdded() {
+        try {
+            String sql = "SELECT * FROM dbbooking;";
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            DefaultTableModel dtm = (DefaultTableModel) HistoryTable.getModel();
+        dtm.setRowCount(0);
+        String [] data = new String[6];
+        int i = 1;
+       
+        while(rs.next()) {
+            data[0] = rs.getString("no_kamar");
+            data[1] = rs.getString("first_name");
+            data[2] = rs.getString("last_name");
+            data[3] = rs.getString("gender");
+            data[4] = rs.getString("check-in");
+            data[5] = rs.getString("check-out");
+            dtm.addRow(data);
+            i++;
+        }
+        }
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -307,6 +375,8 @@ public class MainFrame2 extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+        
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -334,11 +404,16 @@ public class MainFrame2 extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new MainFrame2().setVisible(true);
+            try {
+                new MainFrame2().setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(MainFrame2.class.getName()).log(Level.SEVERE, null, ex);
+            }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable HistoryTable;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
@@ -355,7 +430,6 @@ public class MainFrame2 extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
@@ -367,4 +441,6 @@ public class MainFrame2 extends javax.swing.JFrame {
     private javax.swing.JPanel register;
     private javax.swing.JPanel tabel;
     // End of variables declaration//GEN-END:variables
+
+   
 }

@@ -12,10 +12,61 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
+import java.util.Properties;
 import java.util.Scanner;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.Timer;
+import com.lowagie.text.Document;
+import com.lowagie.text.DocumentException;
+import com.lowagie.text.Font;
+import com.lowagie.text.Paragraph;
+import com.lowagie.text.pdf.PdfPTable;
+import com.lowagie.text.pdf.PdfWriter;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
+import javax.mail.BodyPart;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Multipart;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.Timer;
+
 
 /**
  *
@@ -91,6 +142,51 @@ public class MainFrame1 extends javax.swing.JFrame {
         }).start();
     }
     
+    /*
+    void send_mail() {
+        String Email1 = "ihsanshiddiq6513@gmail.com";
+        String Email2 = "alif.zaky.c@students.esqbs.ac.id";
+
+        String from = "nightstay165@gmail.com";
+        final String username = "nightstay165@gmail.com";
+        final String password = "Esqbs165*";
+        String host = "smtp.gmail.com";
+
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", host);
+        props.put("mail.smtp.port", "587");
+
+        Session session = Session.getInstance(props, new javax.mail.Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(username, password);
+            }
+        });
+
+        try {
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(from));
+
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(Email1));
+            message.setRecipients(Message.RecipientType.CC, InternetAddress.parse(Email2));
+
+            message.setSubject("Repport File");
+
+            //message.setText(ReportTextArea.getText());
+
+            Transport.send(message);
+
+            System.out.println("Sent message successfully....");
+            
+            JOptionPane.showMessageDialog(null, "Sent successfully");
+
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    */
    
     /**
      * This method is called from within the constructor to initialize the form.
@@ -760,7 +856,7 @@ public class MainFrame1 extends javax.swing.JFrame {
         String room_num = null;
         
         
-        boolean roomnumerror = true;
+        boolean roomnumerror = false;
         
         if( (juniorroomtypecombobox.getSelectedItem().toString().equalsIgnoreCase("Junior")) && juniorisvisible){
             room_num = jComboBox1.getSelectedItem().toString();
@@ -774,6 +870,9 @@ public class MainFrame1 extends javax.swing.JFrame {
             room_num = royalroomnum.getSelectedItem().toString();
             roomnumerror = true;
 
+        } else {
+            room_num = "lmao";
+            roomnumerror = false;
         }
         
         System.out.println(room_num);
@@ -816,44 +915,44 @@ public class MainFrame1 extends javax.swing.JFrame {
         System.out.println(froom);
         System.out.println("roomnumerror status: " + roomnumerror);
         
-        if(roomnumerror && froom!=null){
-        
+        if (roomnumerror && froom != null) {
 
-        if (!(checkindate == null) && !(checkoutdate == null)) {
+            if (!(checkindate == null) && !(checkoutdate == null)) {
 
-            LocalDate chkinday = LocalDate.parse(checkinattempt);
-            LocalDate chkoutday = LocalDate.parse(checkoutattempt);
+                LocalDate chkinday = LocalDate.parse(checkinattempt);
+                LocalDate chkoutday = LocalDate.parse(checkoutattempt);
 
-            Long day_gap = ChronoUnit.DAYS.between(chkinday, chkoutday);
+                Long day_gap = ChronoUnit.DAYS.between(chkinday, chkoutday);
 
-            if (!(day_gap <= 0) && !(checkindate.before(currentdate)) ) {
-                int finaltotal = (int) (day_gap * RM.getHarga(Integer.parseInt(froom)));
-                home.setVisible(false);
-                register.setVisible(false);
-                roomOption.setVisible(false);
-                summary.setVisible(true);
-                finalroom.setText(": " + juniorroomtypecombobox.getSelectedItem().toString() + "(" + room_num + ")");
-                finalduration.setText(": " + String.valueOf(day_gap) + " hari");
-                finalroomprice.setText(": Rp" + RM.getHarga(Integer.parseInt(froom)) + " /malam");
-                finalprice.setText(": Rp" + finaltotal);
-                finalcheckin.setText(": " + chkinday.toString());
-                finalcheckout.setText(": " + chkoutday.toString());
-                finalroomnumber.setText(room_num);
-                backbtnroomoption.setVisible(true);
-                
+                if (!(day_gap <= 0) && !(checkindate.before(currentdate))) {
+                    int finaltotal = (int) (day_gap * RM.getHarga(Integer.parseInt(froom)));
+                    home.setVisible(false);
+                    register.setVisible(false);
+                    roomOption.setVisible(false);
+                    summary.setVisible(true);
+                    finalroom.setText(": " + juniorroomtypecombobox.getSelectedItem().toString() + "(" + room_num + ")");
+                    finalduration.setText(": " + String.valueOf(day_gap) + " hari");
+                    finalroomprice.setText(": Rp" + RM.getHarga(Integer.parseInt(froom)) + " /malam");
+                    finalprice.setText(": Rp" + finaltotal);
+                    finalcheckin.setText(": " + chkinday.toString());
+                    finalcheckout.setText(": " + chkoutday.toString());
+                    finalroomnumber.setText(room_num);
+                    backbtnroomoption.setVisible(true);
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Please input an appropriate date",
+                            "Message!", JOptionPane.ERROR_MESSAGE);
+                }
             } else {
-                JOptionPane.showMessageDialog(null, "Please input an appropriate date",
-                        "Message!", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Please input an appropriate date", "Message!",
+                        JOptionPane.ERROR_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Please input an appropriate date", "Message!",
+            JOptionPane.showMessageDialog(null, "Invalid room", "Message!",
                     JOptionPane.ERROR_MESSAGE);
+
         }
-        } else { JOptionPane.showMessageDialog(null, "Invalid room", "Message!",
-                    JOptionPane.ERROR_MESSAGE);
-        
-        }
-         
+
     }//GEN-LAST:event_nextbtnsummaryActionPerformed
 
     private void backbtnregisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnregisterActionPerformed
@@ -994,11 +1093,140 @@ public class MainFrame1 extends javax.swing.JFrame {
         
         backbtnroomoption.setVisible(false);
         
+                //================FILE HANDLING==================
+                
+                String path = "\\Users\\Public\\Documents";
+        
+        String res = null;
+        boolean paid = jCheckBox1.isSelected();
+        if (paid == true) {
+            res = "Sudah dibayar.";
+        } else {
+            res = "Belum dibayar.";
+        }
+                
+        //nama file
+        String fname = firstnameinput.getText();
+        String nameFile = fname + lastnameinput.getText() + "invoice";
+        
+        Document doc = new Document();
+        
+        try {
+            PdfWriter.getInstance(doc, new FileOutputStream(path+ "\\" + nameFile + ".pdf"));
+            doc.open();
+            
+            PdfPTable tbl = new PdfPTable(5 );
+            Paragraph para = new Paragraph();
+            
+           
+            //
+            Font catFont = new Font(null, 24, Font.BOLD);
+            Font fnameprint = new Font(null, 20, Font.BOLD);
+            Font lnameprint = new Font(null, 18);
+            Font desc = new Font(null,16);
+            //title setting
+            para.add(new Paragraph("NIGHTSTAYv2 INVOICE", catFont));
+            para.add(new Paragraph("_________________", catFont));
+            para.add(new Paragraph(""));
+            para.add(new Paragraph("TN/NY " + fname, fnameprint));
+            para.add(new Paragraph(lastnameinput.getText(),lnameprint));
+            para.add(new Paragraph(""));
+            para.add(new Paragraph("Kamar :  " + finalroom.getText(), desc));
+            para.add(new Paragraph("Durasi Tinggal :  " + finalduration.getText(), desc));
+            para.add(new Paragraph("Harga Kamar :  " + finalroomprice.getText(), desc));
+            para.add(new Paragraph("Check In :  " + finalcheckin.getText(), desc));
+            para.add(new Paragraph("Check Out :  " + finalcheckout.getText(), desc));
+            para.add(new Paragraph(""));
+            para.add(new Paragraph("TOTAL: Rp" + finalprice.getText(), fnameprint));
+            para.add(new Paragraph("Status: " + res, desc));
+            
+            //table setting
+            //adding header
+            
+            
+            doc.add(para);
+            //doc.add(tbl);
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(MainFrame1.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (DocumentException ex) {
+            Logger.getLogger(MainFrame1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        doc.close();
+
+        JOptionPane.showMessageDialog(null, "File created.");
+
+        // ===================================================
+        // ==========BELOW IS SEND TO EMAIL FUNCTION==========
+        // ===================================================
+
+        String to = emailinput.getText();
+
+        String from = "nightstay165@gmail.com";
+        final String username = "nightstay165@gmail.com";
+        final String password = "Esqbs165*";
+        String host = "smtp.gmail.com";
+
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", host);
+        props.put("mail.smtp.port", "587");
+
+        Session session = Session.getInstance(props, new javax.mail.Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(username, password);
+            }
+        });
+        
+        Boolean flag = true;
+
+        try {
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(from));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
+
+            message.setSubject("NIGHTSTAY INVOICE");
+
+            BodyPart messageBodyPart = new MimeBodyPart();
+            messageBodyPart.setText("Invoice for " + fname +" "+ lastnameinput.getText());
+
+            Multipart multipart = new MimeMultipart();
+            multipart.addBodyPart(messageBodyPart);
+
+            messageBodyPart = new MimeBodyPart();
+            // String filename = "\\Users\\LeSnovo\\Documents\\Subject1.txt";
+            String filename = "\\Users\\Public\\Documents\\" + nameFile + ".pdf";
+            DataSource source = new FileDataSource(filename);
+            messageBodyPart.setDataHandler(new DataHandler(source));
+            messageBodyPart.setFileName("Night Stay Invoice.pdf");
+            multipart.addBodyPart(messageBodyPart);
+
+            message.setContent(multipart);
+
+            Transport.send(message);
+
+            System.out.println("Sent message successfully....");
+            
+            //emailsentnotification.setVisible(true);
+            //emailsentnotification.setSize(340, 180);
+            
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error you did not enter an email properly, please try again.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            throw new RuntimeException(e);
+        }
+        
+        
         firstnameinput.setText("");
         lastnameinput.setText("");
         emailinput.setText("");
         checkin.setCalendar(null);
                 checkout.setCalendar(null);
+                
+       
 
 
 // TODO add your handling code here:
