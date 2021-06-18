@@ -766,9 +766,26 @@ public class MainFrame1 extends javax.swing.JFrame {
         
         String room = juniorroomtypecombobox.getSelectedItem().toString();
         String froom;
-        String room_num = jComboBox1.getSelectedItem().toString();
+        String room_num = null;
         
-        //if()
+        
+        boolean roomnumerror = true;
+        
+        if( (juniorroomtypecombobox.getSelectedItem().toString().equalsIgnoreCase("Junior")) && juniorisvisible){
+            room_num = jComboBox1.getSelectedItem().toString();
+            roomnumerror = true;
+            
+        } else if ((juniorroomtypecombobox.getSelectedItem().toString().equalsIgnoreCase("President")) && presidentisvisible) {
+            room_num = presidentroomnum.getSelectedItem().toString();
+            roomnumerror = true;
+
+        } else if (juniorroomtypecombobox.getSelectedItem().toString().equalsIgnoreCase("Royal") && royalisvisible) {
+            room_num = royalroomnum.getSelectedItem().toString();
+            roomnumerror = true;
+
+        }
+        
+        System.out.println(room_num);
         //int roomnum = Integer.parseInt(room_num);
 
         switch (room_num){
@@ -805,8 +822,10 @@ public class MainFrame1 extends javax.swing.JFrame {
 
         }
        
-        if(froom!=null){
-            
+        System.out.println(froom);
+        System.out.println("roomnumerror status: " + roomnumerror);
+        
+        if(roomnumerror && froom!=null){
         
 
         if (!(checkindate == null) && !(checkoutdate == null)) {
@@ -958,11 +977,39 @@ public class MainFrame1 extends javax.swing.JFrame {
 
     private void savebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebtnActionPerformed
         //String boookid = finalroomnumber.toString();
-        int bookid = Integer.parseInt(jComboBox1.getSelectedItem().toString());
+        //int bookid = Integer.parseInt(jComboBox1.getSelectedItem().toString());
+        int bookid = 0;
+        //RM.setStatus(bookid);
+        
+        if( (juniorroomtypecombobox.getSelectedItem().toString().equalsIgnoreCase("Junior")) && juniorisvisible){
+            bookid = Integer.parseInt(jComboBox1.getSelectedItem().toString());
+            jComboBox1.removeItem(jComboBox1.getSelectedItem().toString());
+            
+        } else if ((juniorroomtypecombobox.getSelectedItem().toString().equalsIgnoreCase("President")) && presidentisvisible) {
+            bookid = Integer.parseInt(presidentroomnum.getSelectedItem().toString());
+            presidentroomnum.removeItem(presidentroomnum.getSelectedItem().toString());
+            //roomnumerror = true;
+
+        } else if (juniorroomtypecombobox.getSelectedItem().toString().equalsIgnoreCase("Royal") && royalisvisible) {
+            bookid = Integer.parseInt(royalroomnum.getSelectedItem().toString());
+            royalroomnum.removeItem(royalroomnum.getSelectedItem().toString());
+            //roomnumerror = true;
+
+        }
         RM.setStatus(bookid);
-        jComboBox1.removeItem(jComboBox1.getSelectedItem().toString());
+        
+       
+        //jComboBox1.removeItem(jComboBox1.getSelectedItem().toString());
         
         backbtnroomoption.setVisible(false);
+        
+        firstnameinput.setText("");
+        lastnameinput.setText("");
+        emailinput.setText("");
+        checkin.setCalendar(null);
+                checkout.setCalendar(null);
+
+
 // TODO add your handling code here:
     }//GEN-LAST:event_savebtnActionPerformed
 
