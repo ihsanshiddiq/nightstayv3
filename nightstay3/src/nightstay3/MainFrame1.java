@@ -283,6 +283,11 @@ public class MainFrame1 extends javax.swing.JFrame {
         lblAdmin.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         lblAdmin.setForeground(new java.awt.Color(255, 255, 255));
         lblAdmin.setText("Admin");
+        lblAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAdminMouseClicked(evt);
+            }
+        });
 
         lblBooking.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         lblBooking.setForeground(new java.awt.Color(255, 255, 255));
@@ -362,11 +367,12 @@ public class MainFrame1 extends javax.swing.JFrame {
 
         home.setBackground(new java.awt.Color(153, 153, 255));
 
+        jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(153, 153, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("5-STAR HOTEL IN MAKASAR\n\nNightStay Hotel designed to bring you an upscale modern-day hotel \nexperience from your arrival to your next time. Perfectly located \nin the heart of Makasar, near the highway and 30 minutes from Airport, \nour 5-star hotel is within easy reach of Makasar's prestigious corporations, \nlandmark attractions, and shopping centers, restaurants, and nightlife.");
+        jTextArea1.setText("                                   5-STAR HOTEL IN MAKASAR\n\n     NightStay Hotel designed to bring you an upscale modern-day hotel \n        experience from your arrival to your next time. Perfectly located \n   in the heart of Makasar, near the highway and 30 minutes from Airport, \n our 5-star hotel is within easy reach of Makasar's prestigious corporations, \n   landmark attractions, and shopping centers, restaurants, and nightlife.");
         jTextArea1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jButton6.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
@@ -1239,6 +1245,11 @@ public class MainFrame1 extends javax.swing.JFrame {
     private void presidentroomnumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_presidentroomnumActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_presidentroomnumActionPerformed
+
+    private void lblAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAdminMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_lblAdminMouseClicked
 
     /**
      * @param args the command line arguments

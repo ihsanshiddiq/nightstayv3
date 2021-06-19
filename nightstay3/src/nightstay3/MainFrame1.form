@@ -133,6 +133,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Admin"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblAdminMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblBooking">
           <Properties>
@@ -284,6 +287,7 @@
           <SubComponents>
             <Component class="javax.swing.JTextArea" name="jTextArea1">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="99" type="rgb"/>
                 </Property>
@@ -292,7 +296,7 @@
                   <Font name="Times New Roman" size="18" style="1"/>
                 </Property>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="5-STAR HOTEL IN MAKASAR&#xa;&#xa;NightStay Hotel designed to bring you an upscale modern-day hotel &#xa;experience from your arrival to your next time. Perfectly located &#xa;in the heart of Makasar, near the highway and 30 minutes from Airport, &#xa;our 5-star hotel is within easy reach of Makasar&apos;s prestigious corporations, &#xa;landmark attractions, and shopping centers, restaurants, and nightlife."/>
+                <Property name="text" type="java.lang.String" value="                                   5-STAR HOTEL IN MAKASAR&#xa;&#xa;     NightStay Hotel designed to bring you an upscale modern-day hotel &#xa;        experience from your arrival to your next time. Perfectly located &#xa;   in the heart of Makasar, near the highway and 30 minutes from Airport, &#xa; our 5-star hotel is within easy reach of Makasar&apos;s prestigious corporations, &#xa;   landmark attractions, and shopping centers, restaurants, and nightlife."/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                     <BevelBorder/>
@@ -561,36 +565,9 @@
                               </Group>
                               <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                           </Group>
-                          
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="juniorroomtypecombobox" min="-2" pref="33" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jComboBox1" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                                  <Component id="royalroomnum" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                                  <Component id="presidentroomnum" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="checkin" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="nextbtnsummary" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="backbtnregister" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="checkout" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <Component id="checkout" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
